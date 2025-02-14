@@ -114,7 +114,7 @@ body {
 .dropdown {
     position: relative;
     z-index: 1001;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .hero nav ul .dropdown .dropbtn {
@@ -224,7 +224,8 @@ body {
     width: 100%;
     height: 200vh;
     overflow: hidden;
-    margin-top: 100px;
+    padding-top: 100px;
+    background: rgb(177, 177, 177);
 }
 
 .teamet .top-container {
@@ -241,6 +242,7 @@ body {
 
 .teamet .top-container .top-member {
     color: black;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,7 +295,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-top: 600px;
+    margin-top: 400px;
     padding: 0 60px;
 }
 

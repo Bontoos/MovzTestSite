@@ -114,7 +114,7 @@ body {
 .dropdown {
     position: relative;
     z-index: 1001;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .hero nav ul .dropdown .dropbtn {
