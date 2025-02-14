@@ -221,6 +221,75 @@ body {
 
 /* Contact Form */
 
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.right {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin-top: -100px;
+    margin-right: 20px;
+}
+
+.right  h2 {
+    font-family: jmh;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.right p {
+    font-family: jmh;
+    font-size: 15px;
+    padding: 100px;
+    max-width: 50%;
+    line-height: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: white;
+}
+
+.right a {
+    text-decoration: none;
+    color: white;
+    font-family: jmh;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+
+}
+.right a:hover {
+    background-color: rgb(255, 123, 0);
+    color: white;
+    transform: scale(1.1);
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
