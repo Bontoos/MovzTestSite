@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movz logistik</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" href="https://movz.se/wp-content/uploads/2023/09/cropped-Movz-Wordmark-01-1-scaled-2-32x32.jpg" sizes="32x32">
+    
+</head>
+<body>
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="../IMAGES/herobackground.mp4" type="video/mp4" />
+        </video>
+        <nav id="navbar" class="navbar">
+            <img src="../IMAGES/movz-logga.png" alt="">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Information
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <li><a href="teamet.html">Teamet</a></li>
+                        <li><a href="samverkan.html">Samverkan och samarbete</a></li>
+                        <li><a href="intresse.html">Intresseanmälan och undersökning</a></li>
+                    </div>
+                </div>
+                <li><a href="kontakta.html">Kontakta oss</a></li>
+                <li><a href="movzapp.html">Movz app och admin panel</a></li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <img src="../IMAGES/movz-logga.png" alt="">
+            <div class="line"></div>
+            <p>Your Route to Efficient and Sustainable Transport</p>
+        </div>
+    </section>
+        <section class="news-section">
+            
+        </section>
+        <footer>
+            <div class="container">
+                <div class="content left">
+                    <h2>HQ</h2>
+                    <h3>Address</h3>
+                    <p>Karlstad Innovation Park  V.5<br>Sommargatan 101A<br>65637 Karlstad</p>
+                </div>
+                <div class="content center"> 
+                    <h2>CONNECT</h2>
+                    <p>Info@movz.se<br>0762506716</p>
+                </div>
+                <div class="content right">
+                    <h2>RÄTTSLIG</h2>
+                    <p>Sekretesspolicy</p>
+                </div>
+
+                
+            </div>
+        </footer>
+        <script>
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 0) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+        <script src="../JS/news_arrows.js" defer></script>
+</body>
+</html>

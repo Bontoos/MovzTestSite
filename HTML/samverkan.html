@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/samverkan.css">
+</head>
+<body>
+    <section class="hero">
+        <img class="background" src="../IMAGES/samverkan.png" alt="">
+        <nav id="navbar" class="navbar">
+            <img src="../IMAGES/movz-logga.png" alt="">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Information
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <li><a href="teamet.html">Teamet</a></li>
+                        <li><a href="samverkan.html">Samverkan och samarbete</a></li>
+                        <li><a href="intresse.html">Intresseanmälan och undersökning</a></li>
+                    </div>
+                </div>
+                <li><a href="kontakta.html">Kontakta oss</a></li>
+                <li><a href="movzapp.html">Movz app och admin panel</a></li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <h1>Samarbetspartners</h1>
+            <div class="line"></div>
+            <p>Tillsammans med våra fantastiska samarbetspartners öppnar MOVZ upp en spännande väg mot en hållbar och blomstrande framtid inom logistikbranschen. Med vårt engagemang och expertis i ryggen, är vi redo att forma den logistiska världen i en grönare och mer effektiv riktning.</p>
+        </div>
+    </section>
+    <section class="partners">
+        <div class="container">
+            <div class="partner">
+                <img src="../IMAGES/Samarbeten/almi.png" alt="">
+            </div>
+            <div class="partner">
+                <img src="../IMAGES/Samarbeten/almiinvest.png" alt="">
+            </div>
+            <div class="partner">
+                <img src="../IMAGES/Samarbeten/karlstaduni.png" alt="">
+            </div>
+            <div class="partner">
+                <img src="../IMAGES/Samarbeten/transportarbetare.png" alt="">
+            </div>
+            <div class="partner-wide">
+                <img src="../IMAGES/Samarbeten/transportstyrelsen.png" alt="">
+            </div>
+            <div class="partner-wide">
+                <img src="../IMAGES/Samarbeten/handelshögskola.png" alt="">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="content left">
+                <h2>HQ</h2>
+                <h3>Address</h3>
+                <p>Karlstad Innovation Park  V.5<br>Sommargatan 101A<br>65637 Karlstad</p>
+            </div>
+            <div class="content center"> 
+                <h2>CONNECT</h2>
+                <p>Info@movz.se<br>0762506716</p>
+            </div>
+            <div class="content right">
+                <h2>RÄTTSLIG</h2>
+                <p>Sekretesspolicy</p>
+            </div>
+
+            
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

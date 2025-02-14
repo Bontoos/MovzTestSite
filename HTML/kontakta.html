@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/kontakta.css">
+</head>
+<body>
+    <section class="hero">
+        <img class="background" src="https://movz.se/wp-content/uploads/2023/10/Bakgrund-hemsida-MOVZ-3.jpg" alt="">
+        <nav id="navbar" class="navbar">
+            <img src="../IMAGES/movz-logga.png" alt="">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Information
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <li><a href="teamet.html">Teamet</a></li>
+                        <li><a href="samverkan.html">Samverkan och samarbete</a></li>
+                        <li><a href="intresse.html">Intresseanmälan och undersökning</a></li>
+                    </div>
+                </div>
+                <li><a href="kontakta.html">Kontakta oss</a></li>
+                <li><a href="movzapp.html">Movz app och admin panel</a></li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <h1>Kontakta oss</h1>
+            <div class="line"></div>
+                <form class="contact-form" action="">
+                    <div class="form-group">
+                        <label for="name">Namn:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-post:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Ämne:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Meddelande:</label>
+                        <textarea id="message" name="message" rows="10" required></textarea>
+                    </div>
+                    <button class="submit-btn" type="submit">Skicka</button>
+                </form>        
+            </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="content left">
+                <h2>HQ</h2>
+                <h3>Address</h3>
+                <p>Karlstad Innovation Park  V.5<br>Sommargatan 101A<br>65637 Karlstad</p>
+            </div>
+            <div class="content center"> 
+                <h2>CONNECT</h2>
+                <p>Info@movz.se<br>0762506716</p>
+            </div>
+            <div class="content right">
+                <h2>RÄTTSLIG</h2>
+                <p>Sekretesspolicy</p>
+            </div>
+
+            
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
