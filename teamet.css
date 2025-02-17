@@ -1,0 +1,824 @@
+@font-face {
+    font-family: jmh;
+    src: url(../JMH\ Typewriter.ttf);
+}
+@font-face {
+    font-family: jmh-bold;
+    src: url(../JMH\ Typewriter-Bold.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero .background {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.hero nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.hero nav.scrolled {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero nav img {
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero nav.scrolled img {
+    height: 40px;
+}
+
+.hero nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0px;
+    margin-right: 40px;
+}
+
+.hero nav ul li {
+    padding: 10px;
+    position: relative;
+}
+
+.hero nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.hero nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.hero nav ul li a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 1001;
+    margin: 10px;
+}
+
+.hero nav ul .dropdown .dropbtn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.hero nav ul .dropdown .dropbtn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.hero nav ul .dropdown:hover .dropbtn::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: rgb(102, 102, 102);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgb(102, 102, 102);
+    border-radius: 4px;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #ffffff !important;
+    padding: 12px 20px;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hero .container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.hero .container h1 {
+    height: 20px;
+    font-family: jmh;
+    margin-bottom: 20px;
+}
+
+.hero .container .line {
+    width: 50vh;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 10px 0 35px 0;
+}
+
+.hero .container p {
+    font-family: jmh;
+    font-size: 15px;
+    padding: 0 100px;
+    max-width: 50%;
+    line-height: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .hero .container {
+        height: 60vh;
+        margin-top: 200px;
+    }
+
+    .hero .container h1 {
+        font-size: 30px;
+    }
+    .hero .container p {
+        padding: 0 100px;
+        max-width: 100%;
+    }
+    
+}
+
+/* Top Teamet*/
+/* changed: added min-height to prevent content shift */
+.teamet {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgba(201, 201, 201, 1);
+}
+
+.teamet .top-section {
+    max-width: 90%;
+    display: flex;
+    justify-self: end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+}
+
+/* changed: added min-height to match hover height */
+.teamet .top-section .profile-card {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    
+    background: #fff;
+    padding: 30px;
+    margin: 20px 0 60px 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s;
+}
+
+/* changed: removed height change */
+.teamet .top-section .profile-card:hover {
+    border-radius: 10px;
+    height: 300px;
+    transition: 0.6s;
+    margin-bottom: 0px;
+}
+
+.teamet .top-section .profile-card .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    z-index: 99;
+}
+
+.teamet .top-section .profile-card:hover .img {
+    transform: translateY(-50px);
+    transition: 0.6s;
+}
+
+.teamet .top-section .profile-card .img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s;
+}
+
+.teamet .top-section .profile-card:hover img {
+    border-radius: 10px;
+    transition: 0.6s;
+}
+
+
+.teamet .top-section .profile-card .caption{
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-80px);
+}
+
+.teamet .top-section .profile-card:hover .caption {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+.teamet .top-section .profile-card .caption .header{
+    font-family: jmh;
+    font-size: 20px;
+    color:black;
+    font-weight: 600;
+}
+
+.teamet .top-section .profile-card .caption .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.teamet .top-section .profile-card .caption .social-links a {
+    color: #0077b5;
+    font-size: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.3s;
+}
+
+.teamet .top-section .profile-card .caption .social-links a:hover {
+    color: #005988;
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+/* Bottom Teamet*/
+.bottom-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 200px;
+    padding: 0 60px;
+}
+
+.bottom-section button i {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+}
+
+.teamet .bottom-container {
+    display: flex;
+    align-items: center;
+    width: 44%;
+    height: 400px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .teamet .bottom-container {
+        width: 21%;
+        height: 350px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .teamet .bottom-container {
+        width: 21%;
+        height: 350px;
+    }
+
+}
+
+
+.bottom-scroll-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.teamet .bottom-section .bottom-container .bottom-scroll-container .profile-card {
+    position: relative;
+    width: 400px;
+    height: 240px;
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.teamet .bottom-section .profile-card .img {
+    display: flex;
+    justify-self: center;
+    position: relative;
+    width: auto;
+    height: 100px;
+    top: -80px; 
+    transition: 0.6s;
+    border: solid 10px #fff;
+    border-radius: 50%;
+}
+
+
+.teamet .bottom-section .profile-card .img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px rgba(42, 42, 42, 0.5);
+    transition: 0.6s;
+}
+
+
+.teamet .bottom-section .profile-card .caption{
+    position: relative;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-40px);
+}
+.teamet .bottom-section .profile-card .caption .header{
+    font-family: jmh;
+    font-size: 20px;
+    color:black;
+    font-weight: 600;
+}
+
+.teamet .bottom-section .profile-card .caption p {
+    font-family: jmh;
+    font-size: 20px;
+    color:#708090;
+    font-weight: 600;
+}
+
+.teamet .bottom-section .profile-card .caption .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.teamet .bottom-section .profile-card .caption .social-links a {
+    color: #0077b5;
+    font-size: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.3s;
+}
+
+
+.scroll-arrow {
+    color: white;
+    padding: 20px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.scroll-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.scroll-arrow img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+}
+
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 25px;
+    padding: 40px;
+}
+
+footer .container .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+footer .container .content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+/* Add these media queries at the end of the file */
+
+@media screen and (max-width: 768px) {
+    /* Navigation adjustments */
+    .hero nav {
+        padding: 15px;
+    }
+    
+    .hero nav ul {
+        margin-right: 20px;
+    }
+    
+    .hero nav ul li {
+        padding: 5px;
+    }
+    
+    /* Hero container adjustments */
+    .hero .container {
+        height: 40vh;
+        padding: 0 20px;
+    }
+    
+    .hero .container h1 {
+        font-size: 24px;
+    }
+    
+    .hero .container p {
+        padding: 0 20px;
+        max-width: 90%;
+        font-size: 14px;
+    }
+    
+    .hero .container .line {
+        width: 80%;
+    }
+    
+    /* Top section profile cards */
+    .teamet .top-section {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .teamet .top-section .profile-card {
+        width: 200px;
+        height: 200px;
+        margin: 20px 10px 60px 10px;
+    }
+    
+    .teamet .top-section .profile-card:hover {
+        height: 260px;
+    }
+
+    
+    /* Bottom section adjustments */
+    .bottom-section {
+        margin-top: 100px;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    
+    .teamet .bottom-container {
+        width: 80%;
+    }
+    
+    .teamet .bottom-section .bottom-container .bottom-scroll-container .profile-card {
+        width: 300px;
+        height: 220px;
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile specific adjustments */
+    .hero nav img {
+        height: 35px;
+    }
+    
+    .hero nav ul {
+        margin-right: 10px;
+    }
+    
+    .hero nav ul li a,
+    .hero nav ul .dropdown .dropbtn {
+        font-size: 13px;
+    }
+    
+    .dropdown-content {
+        min-width: 160px;
+    }
+    
+    /* Profile cards for smallest screens */
+    .teamet .top-section .profile-card {
+        width: 160px;
+        height: 160px;
+        padding: 20px;
+    }
+    
+    .teamet .top-section .profile-card:hover {
+        height: 220px;
+    }
+    
+    .teamet .top-section .profile-card .caption .header {
+        font-size: 16px;
+    }
+    
+    .teamet .top-section .profile-card .caption .social-links a {
+        font-size: 24px;
+        height: 40px;
+        width: 40px;
+    }
+    
+
+    /* Footer adjustments */
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding: 20px 0;
+        z-index: 100;
+    }
+    
+    footer .container .content {
+        width: 100%;
+        margin: 15px 0;
+        display: block;
+        background-color: transparent;
+        color: white;
+    }}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet specific adjustments */
+    .teamet .top-section .profile-card {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .teamet .bottom-container {
+        width: 60%;
+    }
+    
+    .hero .container p {
+        max-width: 70%;
+    }
+}
+
+
+
+
+
+/* Add these styles for the hamburger icon */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    transform: translateY(-10px);
+}
+
+.hamburger::after {
+    transform: translateY(10px);
+}
+
+/* Hamburger animation classes */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s ease;
+        margin: 0;
+    }
+
+    .hero nav ul.active {
+        right: 0;
+    }
+
+    .hero nav ul li {
+        margin: 20px 0;
+    }
+
+    .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+
+    
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        box-shadow: none;
+    }
+}
