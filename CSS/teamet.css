@@ -2,6 +2,10 @@
     font-family: jmh;
     src: url(../JMH\ Typewriter.ttf);
 }
+@font-face {
+    font-family: jmh-bold;
+    src: url(../JMH\ Typewriter-Bold.ttf);
+}
 
 * {
     box-sizing: border-box;
@@ -218,75 +222,144 @@ body {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1100px) {
+
+    .hero .container {
+        height: 60vh;
+        margin-top: 200px;
+    }
+
+    .hero .container h1 {
+        font-size: 30px;
+    }
+    .hero .container p {
+        padding: 0 100px;
+        max-width: 100%;
+    }
+    
+}
+
 /* Top Teamet*/
+/* changed: added min-height to prevent content shift */
 .teamet {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgba(201, 201, 201, 1);
+}
+
+.teamet .top-section {
+    max-width: 90%;
+    display: flex;
+    justify-self: end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+}
+
+/* changed: added min-height to match hover height */
+.teamet .top-section .profile-card {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    
+    background: #fff;
+    padding: 30px;
+    margin: 20px 0 60px 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s;
+}
+
+/* changed: removed height change */
+.teamet .top-section .profile-card:hover {
+    border-radius: 10px;
+    height: 300px;
+    transition: 0.6s;
+    margin-bottom: 0px;
+}
+
+.teamet .top-section .profile-card .img {
     position: relative;
     width: 100%;
-    height: 200vh;
-    overflow: hidden;
-    padding-top: 100px;
-    background: rgb(177, 177, 177);
+    height: 100%;
+    transition: 0.6s;
+    z-index: 99;
 }
 
-.teamet .top-container {
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    position: relative;
+.teamet .top-section .profile-card:hover .img {
+    transform: translateY(-50px);
+    transition: 0.6s;
 }
 
-.teamet .top-container .top-member {
-    color: black;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    width: 30%;
-    height: 300px;
-    margin: 20px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.teamet .top-container .top-member .team-member {
-    height: 30%;
-    object-fit: cover;
+.teamet .top-section .profile-card .img img {
+    width: 100%;
     border-radius: 50%;
-    margin-bottom: 10px;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.6s;
 }
 
-.teamet .top-container .top-member .linkedin {
-    width: 75px;
-    transition: all 0.3s ease;
-}
-.teamet .top-container .top-member .linkedin:hover {
-    transform: scale(1.2);
-    transition: all 0.3s ease;
+.teamet .top-section .profile-card:hover img {
+    border-radius: 10px;
+    transition: 0.6s;
 }
 
-.teamet .top-container .top-member h2 {
+
+.teamet .top-section .profile-card .caption{
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-80px);
+}
+
+.teamet .top-section .profile-card:hover .caption {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+.teamet .top-section .profile-card .caption .header{
     font-family: jmh;
     font-size: 20px;
-    margin-bottom: 10px;
-    color: black;
+    color:black;
+    font-weight: 600;
 }
 
-.teamet .top-container .top-member h3 {
-    font-family: jmh;
-    color: rgba(0, 0, 0, 0.4); 
-    font-size: 15px;
-    padding: 0 100px;
-    max-width: 90%;
-    line-height: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+.teamet .top-section .profile-card .caption .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
+
+.teamet .top-section .profile-card .caption .social-links a {
+    color: #0077b5;
+    font-size: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.3s;
+}
+
+.teamet .top-section .profile-card .caption .social-links a:hover {
+    color: #005988;
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
 
 /* Bottom Teamet*/
 .bottom-section {
@@ -295,19 +368,122 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-top: 400px;
+    margin-top: 200px;
     padding: 0 60px;
 }
 
+.bottom-section button i {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+}
+
 .teamet .bottom-container {
-    width: 840px;
+    display: flex;
+    align-items: center;
+    width: 44%;
+    height: 400px;
     overflow: hidden;
 }
+
+@media screen and (max-width: 1100px) {
+
+    .teamet .bottom-container {
+        width: 21%;
+        height: 350px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .teamet .bottom-container {
+        width: 21%;
+        height: 350px;
+    }
+
+}
+
 
 .bottom-scroll-container {
     display: flex;
     transition: transform 0.5s ease;
 }
+.teamet .bottom-section .bottom-container .bottom-scroll-container .profile-card {
+    position: relative;
+    width: 400px;
+    height: 240px;
+    background: #fff;
+    padding: 30px;
+    margin: 20px;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.teamet .bottom-section .profile-card .img {
+    display: flex;
+    justify-self: center;
+    position: relative;
+    width: auto;
+    height: 100px;
+    top: -80px; 
+    transition: 0.6s;
+    border: solid 10px #fff;
+    border-radius: 50%;
+}
+
+
+.teamet .bottom-section .profile-card .img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px rgba(42, 42, 42, 0.5);
+    transition: 0.6s;
+}
+
+
+.teamet .bottom-section .profile-card .caption{
+    position: relative;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-40px);
+}
+.teamet .bottom-section .profile-card .caption .header{
+    font-family: jmh;
+    font-size: 20px;
+    color:black;
+    font-weight: 600;
+}
+
+.teamet .bottom-section .profile-card .caption p {
+    font-family: jmh;
+    font-size: 20px;
+    color:#708090;
+    font-weight: 600;
+}
+
+.teamet .bottom-section .profile-card .caption .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.teamet .bottom-section .profile-card .caption .social-links a {
+    color: #0077b5;
+    font-size: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    box-shadow: 0 0 22px #3336;
+    transition: 0.3s;
+}
+
 
 .scroll-arrow {
     color: white;
@@ -323,10 +499,6 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.scroll-left {
-    transform: rotate(180deg);
-}
-
 .scroll-arrow img {
     display: flex;
     justify-content: center;
@@ -334,50 +506,8 @@ body {
     width: 20px;
 }
 
-.teamet .bottom-container .bottom-member {
-    min-width: 380px;
-    margin: 20px;
-    color: black;
-    background: rgb(251, 251, 251);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-and; /* Changed from center */
-    height: 300px;
-    padding: 40px 20px; /* Changed padding */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-}
 
-.teamet .bottom-container .bottom-member .team-member {
-    height: 30%;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
 
-.teamet .bottom-container .bottom-member .linkedin {
-    width: 75px;
-}
-
-.teamet .bottom-container .bottom-member h2 {
-    font-family: jmh;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: black;
-}
-
-.teamet .bottom-container .bottom-member h3 {
-    font-family: jmh;
-    color: rgba(0, 0, 0, 0.4); 
-    font-size: 15px;
-    padding: 0 100px;
-    width: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
 
 /* Footer */
 footer {
@@ -418,3 +548,277 @@ footer .container .content h2 {
     margin-bottom: 10px;
 }
 
+
+
+/* Add these media queries at the end of the file */
+
+@media screen and (max-width: 768px) {
+    /* Navigation adjustments */
+    .hero nav {
+        padding: 15px;
+    }
+    
+    .hero nav ul {
+        margin-right: 20px;
+    }
+    
+    .hero nav ul li {
+        padding: 5px;
+    }
+    
+    /* Hero container adjustments */
+    .hero .container {
+        height: 40vh;
+        padding: 0 20px;
+    }
+    
+    .hero .container h1 {
+        font-size: 24px;
+    }
+    
+    .hero .container p {
+        padding: 0 20px;
+        max-width: 90%;
+        font-size: 14px;
+    }
+    
+    .hero .container .line {
+        width: 80%;
+    }
+    
+    /* Top section profile cards */
+    .teamet .top-section {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .teamet .top-section .profile-card {
+        width: 200px;
+        height: 200px;
+        margin: 20px 10px 60px 10px;
+    }
+    
+    .teamet .top-section .profile-card:hover {
+        height: 260px;
+    }
+
+    
+    /* Bottom section adjustments */
+    .bottom-section {
+        margin-top: 100px;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    
+    .teamet .bottom-container {
+        width: 80%;
+    }
+    
+    .teamet .bottom-section .bottom-container .bottom-scroll-container .profile-card {
+        width: 300px;
+        height: 220px;
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile specific adjustments */
+    .hero nav img {
+        height: 35px;
+    }
+    
+    .hero nav ul {
+        margin-right: 10px;
+    }
+    
+    .hero nav ul li a,
+    .hero nav ul .dropdown .dropbtn {
+        font-size: 13px;
+    }
+    
+    .dropdown-content {
+        min-width: 160px;
+    }
+    
+    /* Profile cards for smallest screens */
+    .teamet .top-section .profile-card {
+        width: 160px;
+        height: 160px;
+        padding: 20px;
+    }
+    
+    .teamet .top-section .profile-card:hover {
+        height: 220px;
+    }
+    
+    .teamet .top-section .profile-card .caption .header {
+        font-size: 16px;
+    }
+    
+    .teamet .top-section .profile-card .caption .social-links a {
+        font-size: 24px;
+        height: 40px;
+        width: 40px;
+    }
+    
+
+    /* Footer adjustments */
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding: 20px 0;
+        z-index: 100;
+    }
+    
+    footer .container .content {
+        width: 100%;
+        margin: 15px 0;
+        display: block;
+        background-color: transparent;
+        color: white;
+    }}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet specific adjustments */
+    .teamet .top-section .profile-card {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .teamet .bottom-container {
+        width: 60%;
+    }
+    
+    .hero .container p {
+        max-width: 70%;
+    }
+}
+
+
+
+
+
+/* Add these styles for the hamburger icon */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    transform: translateY(-10px);
+}
+
+.hamburger::after {
+    transform: translateY(10px);
+}
+
+/* Hamburger animation classes */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s ease;
+        margin: 0;
+    }
+
+    .hero nav ul.active {
+        right: 0;
+    }
+
+    .hero nav ul li {
+        margin: 20px 0;
+    }
+
+    .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+
+    
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        box-shadow: none;
+    }
+}
